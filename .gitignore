@@ -34,7 +34,7 @@ build/
 
 # .dockerignore
 
-**
-!target/
-!target/backend-assessment.jar
-
+#**
+#!target/
+#!target/backend-assessment.jar
+#

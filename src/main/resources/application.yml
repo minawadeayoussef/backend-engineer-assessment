@@ -1,0 +1,14 @@
+server:
+  port: 8090
+  address: 0.0.0.0
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${SPRING_DATASOURCE_URL:localhost}:5432/${SPRING_DATASOURCE_DB:backend-assessment}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:12345678}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_CONFIG_LOCATION=optional:/config/application.yml
+      - SPRING_PROFILES_ACTIVE=
+      - USER_TIMEZONE=UTC
+  postgres:
+    image: postgres:latest
+    environment:
+        POSTGRES_DB: backend-assessment
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: 12345678
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/backend_data
+
+volumes:
+  pg_data:
+  backend_data:
